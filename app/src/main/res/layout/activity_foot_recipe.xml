@@ -1,0 +1,64 @@
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:background="@drawable/xml_header_background"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/foodrestoolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@drawable/xml_header_background"
+            app:layout_scrollFlags="scroll|enterAlways"
+            android:layout_gravity="right"
+            app:title=" "
+
+            android:gravity="right"
+
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="باقه توحه"
+                android:layout_gravity="right"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:layout_marginRight="10dp"
+                android:textColor="#ffffff"
+                android:id="@+id/toolbar_title" />
+
+        </android.support.v7.widget.Toolbar>
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabMode="fixed"
+            app:tabIndicatorColor="@color/cardview_dark_background"
+            app:tabSelectedTextColor="@color/cardview_dark_background"
+            app:tabGravity="fill"/>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"  />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/floating_btn_heart"
+        android:layout_gravity="bottom|left"
+        android:background="@color/colorPrimary"
+        android:layout_margin="20dp"
+        android:id="@+id/fav_btn_heart"
+        />
+</android.support.design.widget.CoordinatorLayout>

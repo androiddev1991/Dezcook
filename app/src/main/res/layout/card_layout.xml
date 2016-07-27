@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:onClick="show_details"
+    android:id="@+id/cardview"
+    android:background="@color/colorlighter"
+    card_view:cardCornerRadius="5dp"
+    tools:showIn="@layout/activity_second">
+
+    <RelativeLayout
+
+        android:background="@color/colorlighter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="0dp"
+        android:layout_margin="0dp"
+        >
+        <RelativeLayout
+            android:background="@drawable/xml_rounded_corner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:id="@+id/header"
+            >
+            <TextView
+                android:textColor="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:padding="10dp"
+                android:id="@+id/txtName"
+                android:background="@drawable/xml_header_background"
+                android:textStyle="bold"
+
+                />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/itemcontainer"
+            android:layout_toRightOf="@+id/card_thumbnail"
+            android:layout_below="@+id/header"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+
+            >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="مواد مورد نیاز:"
+            android:textStyle="bold"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/cardview_dark_background"
+            android:id="@+id/itemid"
+            />
+        <TextView
+            android:layout_below="@+id/itemid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtItems"
+
+            android:layout_alignParentRight="true"
+
+
+            android:textSize="16dp"
+            android:paddingTop="5dp"
+            android:paddingRight="5dp"
+            android:lineSpacingExtra="5dp"
+            android:textColor="@color/cardview_dark_background"
+            />
+        </RelativeLayout>
+        <ImageView
+            android:id="@+id/card_thumbnail"
+            android:layout_below="@+id/header"
+            android:layout_width="120dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="5dp"
+            android:paddingBottom="5dp"
+            android:layout_alignParentLeft="true"
+            android:layout_height="120dp"
+            android:src="@drawable/z8"
+            android:scaleType="centerCrop"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:id="@+id/txtid"
+
+            />
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

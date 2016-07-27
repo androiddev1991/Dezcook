@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawerId"
+    android:layout_gravity="right"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.design.widget.CoordinatorLayout
+
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient_background"
+        android:fitsSystemWindows="true">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="256dp"
+            android:fitsSystemWindows="true"
+
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:id="@+id/collapsingToolbar"
+                android:fitsSystemWindows="true"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:collapsedTitleGravity="right|center"
+                app:contentScrim="?attr/colorPrimary"
+                app:expandedTitleGravity="right|bottom"
+                app:collapsedTitleTextAppearance="@style/collapse"
+                app:expandedTitleTextAppearance="@style/expand"
+
+                >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fitsSystemWindows="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/background"
+                    app:layout_collapseMode="pin"
+                    />
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:elevation="7dp"
+                    app:layout_collapseMode="pin"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                    >
+
+                </android.support.v7.widget.Toolbar>
+            </android.support.design.widget.CollapsingToolbarLayout>
+        </android.support.design.widget.AppBarLayout>
+
+        <include layout="@layout/nested_scroll_view" />
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:src="@drawable/floating_btn_heart"
+            app:layout_anchor="@id/appbarLayout"
+            app:layout_anchorGravity="bottom|right"
+
+            />
+
+    </android.support.design.widget.CoordinatorLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+
+        android:fitsSystemWindows="true"
+        android:background="@drawable/navigation_bg_gradient"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:layout_weight="0.9"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:layout_weight=".16"
+                    android:orientation="horizontal"
+                    android:onClick="openSecondActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    >
+                    <ImageView
+                        android:id="@+id/img"
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/navigation_icon_viewlist"
+                        android:padding="10dp"
+
+                        />
+                    <TextView
+                        android:id="@+id/tvlstName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/nav_menu_size"
+                        android:layout_marginRight="40dp"
+                        android:layout_marginTop="10dp"
+                        android:text="لیست غذاها"
+                        android:textColor="@color/white"
+                        android:layout_alignRight="@+id/img"
+
+                        />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_weight=".16"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:onClick="openDezfulActivity"
+                    >
+                    <ImageView
+                        android:id="@+id/img1"
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/navigation_icon_history"
+                        android:padding="10dp"
+
+                        />
+                    <TextView
+                        android:id="@+id/tvlstName1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/nav_menu_size"
+                        android:layout_marginRight="40dp"
+                        android:layout_marginTop="10dp"
+                        android:text="دزفول"
+                        android:textColor="@color/white"
+                        android:layout_alignRight="@+id/img1"
+
+                        />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_weight=".16"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:onClick="openTouristActivity"
+                    >
+                    <ImageView
+                        android:id="@+id/img2"
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/navigation_icon_incognito"
+                        android:padding="10dp"
+
+                        />
+                    <TextView
+                        android:id="@+id/tvlstName2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/nav_menu_size"
+                        android:layout_marginRight="40dp"
+                        android:layout_marginTop="10dp"
+                        android:text="گردشگری"
+                        android:textColor="@color/white"
+                        android:layout_alignRight="@+id/img2"
+
+                        />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_weight=".16"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:onClick="openContactActivity"
+                    >
+                    <ImageView
+                        android:id="@+id/img3"
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/navigation_header_icon"
+                        android:padding="10dp"
+
+                        />
+                    <TextView
+                        android:id="@+id/tvlstName3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/nav_menu_size"
+                        android:layout_marginRight="40dp"
+                        android:layout_marginTop="10dp"
+                        android:text="تماس با ما"
+                        android:textColor="@color/white"
+                        android:layout_alignRight="@+id/img3"
+
+                        />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_weight=".16"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:onClick="exitApp"
+                    >
+                    <ImageView
+                        android:id="@+id/img4"
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/navigation_icon_exit"
+                        android:padding="10dp"
+
+                        />
+                    <TextView
+                        android:id="@+id/tvlstName4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/nav_menu_size"
+                        android:layout_marginRight="40dp"
+                        android:layout_marginTop="10dp"
+                        android:text="خروج"
+                        android:textColor="@color/white"
+                        android:layout_alignRight="@+id/img4"
+
+                        />
+                </RelativeLayout>
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.design.widget.NavigationView>
+
+</android.support.v4.widget.DrawerLayout>
